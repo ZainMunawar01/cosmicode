@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CosmiCode</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="icon.png" rel="icon">
+  <link href="icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <section id="intro" class="clearfix">
+    <div class="container d-flex h-100">
+        <div class="row justify-content-center align-items-center">
+            <!-- Left Side: Text and Advanced Countdown -->
+            <div class="col-md-6 intro-info text-center">
+                <h2>CosmiCode Site<br><span>is Under Maintenance!</span></h2>
+                <div id="countdown" class="countdown-container"></div>
+            </div>
+
+<style>
+    /* Countdown Container */
+    .countdown-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+        flex-wrap: wrap; /* Allow wrapping of boxes in smaller screens */
+    }
+
+    /* Countdown Box */
+    .countdown-box {
+        background: #0a1a39; /* Dark blue */
+        border: 3px solid #1e90ff; /* Light blue border */
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        width: 120px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .countdown-box:hover {
+        transform: scale(1.05);
+    }
+
+    /* Timer Numbers */
+    .countdown-box span {
+        display: block;
+        font-size: 3rem;
+        font-weight: 800;
+        color: #ffffff;
+    }
+
+    /* Timer Labels */
+    .countdown-box small {
+        font-size: 1rem;
+        color: #a9d3ff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Subtle Animation on Box Hover */
+    @keyframes smoothFade {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Ensure Images/Videos are responsive */
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .intro-info h2 {
+            font-size: 1.5rem;
+        }
+
+        .countdown-box {
+            width: 90px; /* Make countdown boxes smaller on mobile */
+        }
+
+        .countdown-box span {
+            font-size: 2.5rem; /* Smaller numbers */
+        }
+
+        .intro-img {
+            margin-top: 20px;
+        }
+    }
+
+/* For very small screens (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+    .countdown-box {
+        width: 70px; /* Make countdown boxes even smaller on very small screens */
+    }
+
+    .countdown-box span {
+        font-size: 2rem; /* Even smaller font for all countdown units */
+    }
+
+    .countdown-box small {
+        font-size: 0.5rem; /* Further reduce label size */
+    }
+
+    .intro-img img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+</style>
+
+<script>
+    const countdownContainer = document.getElementById("countdown");
+    const targetDate = new Date("2025-02-25T00:00:00").getTime(); // Set your target date
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = targetDate - now;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        countdownContainer.innerHTML = `
+            <div class="countdown-box">
+                <span>${days}</span>
+                <small>Days</small>
+            </div>
+            <div class="countdown-box">
+                <span>${hours}</span>
+                <small>Hours</small>
+            </div>
+            <div class="countdown-box">
+                <span>${minutes}</span>
+                <small>Minutes</small>
+            </div>
+            <div class="countdown-box">
+                <span>${seconds}</span>
+                <small>Seconds</small>
+            </div>
+        `;
+
+        if (timeLeft < 0) {
+            clearInterval(timerInterval);
+            countdownContainer.innerHTML = "<h3 style='color: #1e90ff;'>The site is live now!</h3>";
+        }
+    }
+
+    const timerInterval = setInterval(updateCountdown, 1000);
+</script>
+
+
+    <!--==========================
+      Portfolio Section
+    ============================-->
+    <section id="activities" class="section-bg">
+      <div class="container">
+        <header class="section-header">
+          <h3>Our Activities</h3>
+          <p>Explore the vibrant activities and initiatives we undertake to foster growth, engagement, and innovation within our community. Check out our latest updates on LinkedIn.</p>
+        </header>
+        <div class="row justify-content-center">
+          <section id="animated-logo" class="section-bg">
+            <div class="container text-center">
+              <div class="logo-container">
+                <img src="icon.png" alt="CosmiCode Logo" class="animated-logo">
+              </div>
+              <p>Check our activities on our LinkedIn page</p>
+              <a href="https://www.linkedin.com/company/cosmicode-tech/" class="btn-get-started scrollto" target="_blank" style="background-color: #0a1a39; color: #ffffff; border: 2px solid #1e90ff; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Visit Our LinkedIn</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <!-- 3D Motion Style -->
+    <style>
+      #animated-logo {
+        padding: 50px 0;
+        display: flex;
+        justify-content: center;
+        perspective: 1200px; /* Adjusted for dramatic 3D effect */
+      }
+      .logo-container {
+        display: inline-block;
+        transform-style: preserve-3d; /* Preserve 3D transformations */
+      }
+      .animated-logo {
+        width: 200px; /* Adjust size as needed */
+        animation: rotateAndPulse 10s infinite ease-in-out; /* Smooth continuous animation */
+      }
+      @keyframes rotateAndPulse {
+        0% {
+          transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+        }
+        25% {
+          transform: rotateX(30deg) rotateY(90deg) rotateZ(0deg) scale(1.2);
+        }
+        50% {
+          transform: rotateX(0deg) rotateY(180deg) rotateZ(60deg) scale(1);
+        }
+        75% {
+          transform: rotateX(-30deg) rotateY(270deg) rotateZ(-60deg) scale(1.2);
+        }
+        100% {
+          transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) scale(1);
+        }
+      }
+      </style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CosmiCode Footer</title>
+  <style>
+    /* Footer Container */
+    .container {
+      width: 100%;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+
+    /* Styling for the copyright text */
+    .copyright {
+      text-align: center; /* Center the text */
+      font-size: 1.1rem; /* Slightly larger font size */
+      color: #ffffff; /* White color for the text */
+      font-weight: 400; /* Regular weight for the text */
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #0a1a39; /* Dark blue background for footer */
+      border-top: 2px solid #1e90ff; /* Light blue border at the top */
+    }
+
+    /* Make text bolder for strong tags */
+    .copyright strong {
+      font-weight: 700; /* Bold styling for CosmiCode */
+      color: #1e90ff; /* Light blue color for the brand */
+    }
+
+    /* Responsiveness for mobile display */
+    @media (max-width: 768px) {
+      .copyright {
+        font-size: 1rem; /* Slightly smaller font size for mobile */
+        padding: 10px;
+        background-color: #0a1a39; /* Ensure background is consistent */
+      }
+    }
+
+    /* For smaller screens (portrait phones) */
+    @media (max-width: 480px) {
+      .copyright {
+        font-size: 0.9rem; /* Even smaller font size for very small screens */
+        padding: 8px;
+        text-align: center; /* Ensure text remains centered */
+      }
+
+      .copyright strong {
+        font-size: 1rem; /* Make the brand slightly larger */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Footer Section -->
+  <div class="container">
+    <div class="copyright">
+      &copy; 2024 Copyright <strong>CosmiCode</strong>. All Rights Reserved
+    </div>
+  </div>
+</body>
+</html>
+
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/mobile-nav/mobile-nav.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
